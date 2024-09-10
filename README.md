@@ -5,7 +5,7 @@
 # BuildThon
 
 ## Description
-BuildThon is a Go-based KRC-721 NFT smart contract  allows the creation, management, and transfer of unique digital assets (NFTs). Each token represents a unique item and is stored on the blockchain with a one-to-one relationship between the token ID and its metadata. The contract complies with the ERC-721 standard, enabling interoperability with NFT marketplaces, wallets, and other dapps.
+BuildThon is a Go-based KRC-721 NFT smart contract  allows the creation, management, and transfer of unique digital assets (NFTs). Each token represents a unique item and is stored on the blockchain with a one-to-one relationship between the token ID and its metadata. The contract complies with the KRC-721 standard, enabling interoperability with NFT marketplaces, wallets, and other dapps.
 
 ## What is KRC-721?
 
