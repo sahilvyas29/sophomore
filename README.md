@@ -208,9 +208,27 @@ func (c *TokenERC721Contract) Symbol(ctx kalpsdk.TransactionContextInterface) (s
 
 ---
 
-## Checkpoint 8: 🔒 Security & Events
-The KRC721 contract emits key events like `Transfer`, `Approval`, and `ApprovalForAll` to notify external systems. It includes comprehensive security checks, such as authorization to prevent unauthorized actions.
+## Checkpoint 8: 🔒 Deploy Smart Contract
+
+Before you begin, ensure you have the account in Kalp Studio Platform:
+
+1. [Sign Up and Log In to Kalp Studio Platform](https://doc.kalp.studio/Getting-started/Onboarding/How-to-Sign-Up-and-Log-In-to-Kalp-Studio-Platform/)
+
+2. [Deploy a Smart Contract on KALP Studio](https://doc.kalp.studio/Dev-documentation/Kalp-DLT/Smart-Contract-Write-Test-Deploy-Interact/Deploy-the-smart-contract/)
+
+
+---
+
+## Checkpoint 9: 🔒 Interacte with smart contract
+
+Before you interact with apis , ensure you have the following:
+
+1. [Download Postman](https://www.postman.com/downloads/)
+
+2. [Interacting with smart contract](https://doc.kalp.studio/Dev-documentation/Kalp-DLT/Smart-Contract-Write-Test-Deploy-Interact/Interacting-with-smart-contract/)
+
 
 ---
 
 This README serves as an overview for developing and deploying KRC721 NFTs using Go on the Kalp blockchain. For additional details, refer to the Kalp SDK documentation.
+Step by Step to Deploy a Smart Contract on KALP Studio
