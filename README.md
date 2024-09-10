@@ -16,11 +16,14 @@ To install BuildThon, follow these steps:
 1. Clone the repository:
 ```sh
    git clone https://github.com/yourusername/buildthon.git
+```
 
 2. Navigate to the project directory:
-
+```sh
    cd buildthon
+```
 
 3. Install the dependencies
-   
+```sh  
    go mod tidy
+```
