@@ -1,44 +1,55 @@
-🚩 Challenge 2: 🔏 Non Fungible Token
+
+---
+
+### 🚩 Challenge 2: 🔏 Non Fungible Token (NFT) with BuildThon
 # BuildThon
 
 ## Description
-BuildThon is a Go-based framework for developing and managing smart contracts. It provides a robust set of tools and libraries to facilitate the creation, deployment, and management of smart contracts on blockchain platforms.
+BuildThon is a Go-based KRC-721 NFT smart contract  allows the creation, management, and transfer of unique digital assets (NFTs). Each token represents a unique item and is stored on the blockchain with a one-to-one relationship between the token ID and its metadata. The contract complies with the ERC-721 standard, enabling interoperability with NFT marketplaces, wallets, and other dapps.
 
-## Features
-- Easy-to-use APIs for smart contract development
-- Secure and efficient contract execution
-- Integration with popular blockchain platforms
-- Real-time monitoring and logging
-- Comprehensive documentation and examples
+## What is KRC-721?
 
-## Installation
+The KRC-721 introduces a standard for NFT, in other words, this type of Token is unique and can have different value than another Token from the same Smart Contract, maybe due to its age, rarity or even something else like its visual. Wait, visual?
+
+Yes! All NFTs have a uint256 variable called tokenId, so for any KRC-721 Contract, the pair contract address, uint256 tokenId must be globally unique. That said, a dapp can have a "converter" that uses the tokenId as input and outputs an image of something cool, like zombies, weapons, skills or amazing kitties!
+
+
+### 🚀 Key Features
+- 🛠 Easy-to-use APIs for smart contract development.
+- 🔒 Secure and efficient contract execution.
+- 🧩 Integration with popular blockchain platforms.
+- 🖥 Real-time monitoring and logging.
+- 📚 Comprehensive documentation and examples.
+
+---
+
+## Checkpoint 0: 📦 Installation
+
+Before you begin, ensure you have the following:
+
+- 🖥 Go version `>=1.19` but `<1.20`.
+- ⚙️ Installed and configured Kalp SDK.
+
 To install BuildThon, follow these steps:
 
 1. Clone the repository:
-```sh
+   ```sh
    git clone https://github.com/yourusername/buildthon.git
-```
+   ```
 
 2. Navigate to the project directory:
-```sh
+   ```sh
    cd buildthon
-```
+   ```
 
-3. Install the dependencies
-```sh  
+3. Install the dependencies:
+   ```sh  
    go mod tidy
-```
+   ```
+
 ---
 
-# KRC721 Token Contract Function Explanation
-
-- **Go Programming Language**: A basic understanding of Go.
-- **Blockchain & NFT Concepts**: Familiarity with blockchain technology and NFTs.
-- **Kalp SDK**: Installed and configured Kalp SDK environment.
-
-> **Note**: The Kalp SDK is compatible with Go versions `>=1.19` and `<1.20`.
-
-## Token Contract Functions
+## Checkpoint 1: 🏗 Token Contract Functions
 
 ### Initialize Token Contract
 This function sets up the name and symbol of the KRC721 token collection.
@@ -57,8 +68,10 @@ func (c *TokenERC721Contract) Initialize(ctx kalpsdk.TransactionContextInterface
 }
 ```
 
-### MintWithTokenURI
-Mint new NFTs with a unique token ID and metadata URI.
+---
+
+### Checkpoint 2: 🖨 Minting NFTs
+Mint new NFTs with a unique token ID and metadata URI using `MintWithTokenURI`.
 
 ```go
 func (c *TokenERC721Contract) MintWithTokenURI(ctx kalpsdk.TransactionContextInterface, tokenId string, tokenURI string) (*Nft, error) {
@@ -70,8 +83,10 @@ func (c *TokenERC721Contract) MintWithTokenURI(ctx kalpsdk.TransactionContextInt
 }
 ```
 
-### Burn
-Permanently delete an NFT from the blockchain.
+---
+
+### Checkpoint 3: 🔥 Burning NFTs
+Permanently delete an NFT from the blockchain using `Burn`.
 
 ```go
 func (c *TokenERC721Contract) Burn(ctx kalpsdk.TransactionContextInterface, tokenId string) (bool, error) {
@@ -81,8 +96,10 @@ func (c *TokenERC721Contract) Burn(ctx kalpsdk.TransactionContextInterface, toke
 }
 ```
 
-### TransferFrom
-Transfer ownership of an NFT from one account to another.
+---
+
+## Checkpoint 4: 🔄 Transferring NFTs
+Transfer ownership of an NFT from one account to another using `TransferFrom`.
 
 ```go
 func (c *TokenERC721Contract) TransferFrom(ctx kalpsdk.TransactionContextInterface, from string, to string, tokenId string) (bool, error) {
@@ -94,6 +111,10 @@ func (c *TokenERC721Contract) TransferFrom(ctx kalpsdk.TransactionContextInterfa
     return true, nil
 }
 ```
+
+---
+
+## Checkpoint 5: ✏️ Approval & Authorization
 
 ### Approve
 Authorize another account to transfer an NFT on behalf of the owner.
@@ -123,7 +144,9 @@ func (c *TokenERC721Contract) SetApprovalForAll(ctx kalpsdk.TransactionContextIn
 }
 ```
 
-## Read Functions
+---
+
+## Checkpoint 6: 📊 Read Functions
 
 ### BalanceOf
 Get the number of NFTs owned by a specific account.
@@ -153,36 +176,9 @@ func (c *TokenERC721Contract) OwnerOf(ctx kalpsdk.TransactionContextInterface, t
 }
 ```
 
-### GetApproved
-Check which account has transfer approval for a specific NFT.
+---
 
-```go
-func (c *TokenERC721Contract) GetApproved(ctx kalpsdk.TransactionContextInterface, tokenId string) (string, error) {
-    nft, err := _readNFT(ctx, tokenId)
-    if err != nil {
-        return "", err
-    }
-    return nft.Approved, nil
-}
-```
-
-### IsApprovedForAll
-Determine whether an operator has full approval to manage all NFTs of an account.
-
-```go
-func (c *TokenERC721Contract) IsApprovedForAll(ctx kalpsdk.TransactionContextInterface, owner string, operator string) (bool, error) {
-    approvalKey, _ := ctx.CreateCompositeKey(approvalPrefix, []string{owner, operator})
-    approvalBytes, err := ctx.GetState(approvalKey)
-    if len(approvalBytes) < 1 {
-        return false, nil
-    }
-    approval := new(Approval)
-    _ = json.Unmarshal(approvalBytes)
-    return approval.Approved, err
-}
-```
-
-## Contract Metadata
+## Checkpoint 7: 🏗 Contract Metadata
 
 ### Name
 Get the name of the token collection.
@@ -210,39 +206,11 @@ func (c *TokenERC721Contract) Symbol(ctx kalpsdk.TransactionContextInterface) (s
 }
 ```
 
-### TokenURI
-Get the metadata URI for an NFT.
+---
 
-```go
-func (c *TokenERC721Contract) TokenURI(ctx kalpsdk.TransactionContextInterface, tokenId string) (string, error) {
-    nft, err := _readNFT(ctx, tokenId)
-    if err != nil {
-        return "", err
-    }
-    return nft.TokenURI, nil
-}
-```
-
-### TotalSupply
-Get the total number of NFTs minted in the collection.
-
-```go
-func (c *TokenERC721Contract) TotalSupply(ctx kalpsdk.TransactionContextInterface) int {
-    iterator, _ := ctx.GetStateByPartialCompositeKey(nftPrefix, []string{})
-    totalSupply := 0
-    for iterator.HasNext() {
-        iterator.Next()
-        totalSupply++
-    }
-    return totalSupply
-}
-```
-
-## Events & Security
-The KRC721 contract emits events like `Transfer`, `Approval`, and `ApprovalForAll` to notify external systems. It includes comprehensive security checks, such as authorization, to prevent unauthorized actions.
+## Checkpoint 8: 🔒 Security & Events
+The KRC721 contract emits key events like `Transfer`, `Approval`, and `ApprovalForAll` to notify external systems. It includes comprehensive security checks, such as authorization to prevent unauthorized actions.
 
 ---
-### challenges
-
 
 This README serves as an overview for developing and deploying KRC721 NFTs using Go on the Kalp blockchain. For additional details, refer to the Kalp SDK documentation.
