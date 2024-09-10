@@ -27,8 +27,8 @@ Yes! All NFTs have a uint256 variable called tokenId, so for any KRC-721 Contrac
 
 Before you begin, ensure you have the following:
 
-- 🖥 Go version `>=1.19` but `<1.20`.
-- ⚙️ Installed and configured Kalp SDK.
+- 🖥 [Download-Go](https://go.dev/doc/install) Go version `>=1.19` but `<1.20`.
+- ⚙️ Installed and configured [KalpSDK](https://doc.kalp.studio/Dev-documentation/Kalp-DLT/Use-the-kalp-sdk/Kalp-golang-sdk)
 
 To install BuildThon, follow these steps:
 
