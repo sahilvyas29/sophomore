@@ -490,7 +490,7 @@ After follwing above instruction you will get some response in below response bo
 
 - Copy the parameters (Check Params) of the tokenURI function and paste them into the URL parameters section in Postman.
 
-- Pass the custom value for the token ID in the parameters. See the example screen shot on line number 6 and 7.
+- Pass the custom value for the token ID in the parameters. See the example screen shot on line number 6.
 
 ###### Parameters
 
@@ -509,7 +509,7 @@ Note: Make sure to replace any placeholders or variables in the copied code with
 - Copy the route of the ownerOf function and paste it into the URL box in Postman.
 
 - Copy the parameters (Check Params) of the ownerOf function and paste them into the URL parameters section in Postman.
-- Pass the custom value for the token ID in the parameters. See the example screen shot on line number 6 and 7.
+- Pass the custom value for the token ID in the parameters. See the example screen shot on line number 6.
 
 ##### Parameters
 
