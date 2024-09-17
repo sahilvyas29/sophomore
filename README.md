@@ -1,4 +1,4 @@
-# Shophomore : Challenge 2
+##### (Challenge-2): Sophomore
 
 ##  🚀 Build Your Own NFT System on the Kalp Blockchain
 
@@ -35,7 +35,9 @@ Imagine you’re playing your favorite online game. You’ve just unlocked an ep
 
 ##### Before you begin, ensure you have the following:
 
-- **Step 1. 🖥 [Download-Go](https://go.dev/doc/install) Go version `>=1.19` but `<1.20`.**
+- **Step 1. 🖥 [Download-Go](https://go.dev/doc/install)**  
+
+>  **Note:** Ensure you have Go version `>=1.19` but `<1.20` in [Go.mod file](https://github.com/PrabalParihar/BuildThon/blob/main/go.mod#L3)
 
 ---
 
@@ -52,7 +54,7 @@ Imagine you’re playing your favorite online game. You’ve just unlocked an ep
 2. Navigate to the project directory:
 
    ```sh
-   cd buildthon
+   cd sophomore
    ```
 
 3. Install the dependencies:
@@ -66,7 +68,7 @@ Imagine you’re playing your favorite online game. You’ve just unlocked an ep
 
 ```sh
 
-Folder buildthon
+Folder sophomore
 ├──vendor
 ├──go.mod
 ├──go.sum
@@ -82,6 +84,8 @@ Folder buildthon
 ## Checkpoint 1: 🏗 NFT Contract Walkthrough
 
 Let's **Open the file `krc.go`** and go deep dive into NFT contract.
+
+> 💡 Refer docs for more detailed info :- [Write the smart contract](https://docs.kalp.studio/Dev-documentation/Kalp-DLT/Smart-Contract-Write-Test-Deploy-Interact/Write-the-smart-contract/)
 
 #### 1. Initializing the Token Contract
 
@@ -336,14 +340,27 @@ func (c *TokenERC721Contract) Symbol(ctx kalpsdk.TransactionContextInterface) (s
 
 Now, its time to deploy the contract.
 
-Before you begin, ensure you have the account in Kalp Studio Platform, You can create the Kalp Studio Platform account by following the below docs
+Before you begin, ensure you have the account in [Kalp Studio Platform](https://console.kalp.studio), You can create the Kalp Studio Platform account by following the below docs
 
 1. [Sign Up and Log In to Kalp Studio Platform](https://doc.kalp.studio/Getting-started/Onboarding/How-to-Sign-Up-and-Log-In-to-Kalp-Studio-Platform/)
 
 Now, after having the account in Kalp Studio Platform. we can deploy the contract using Kalp Studio.
-<!-- Todo Deploy Contract tutorial -->
 
-2. [Deploy a Smart Contract on KALP Studio](https://doc.kalp.studio/Dev-documentation/Kalp-DLT/Smart-Contract-Write-Test-Deploy-Interact/Deploy-the-smart-contract/)
+> 💡 Make sure you are connected to [Kalp Studio Wallet (guide)](https://docs.kalp.studio/Getting-started/Kalp-studio-wallet/How-to-Navigate-To-kalp-studio-Wallet/)
+
+2. [Deploy a Smart Contract on KALP Studio (detail guide)](https://doc.kalp.studio/Dev-documentation/Kalp-DLT/Smart-Contract-Write-Test-Deploy-Interact/Deploy-the-smart-contract/)
+
+    - **Step 1:** Access the Kalp Studio
+Dashboard
+    - **Step 2:** Go to Kalp Instant Deployer
+    - **Step 3:** Click on "Create New" Smart Contract
+    - **Step 4:** Enter the details
+        - **Name:** Enter a name for your smart contract.
+        - **Category:** Choose a category for your smart contract.
+        - **Description:** Optionally, you can add a description for your smart contract.
+    - **Step 4:** Upload your 'sophomore.zip' file.
+
+> 💡 For more descriptive deployment guide, please refer to [detailed docs](https://doc.kalp.studio/Dev-documentation/Kalp-DLT/Smart-Contract-Write-Test-Deploy-Interact/Deploy-the-smart-contract/)
 
 ---
 
