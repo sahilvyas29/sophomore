@@ -378,8 +378,6 @@ After creating an account on Kalp Studio Platform, we can deploy the contract us
 
 ---
 
----
-
 ## Checkpoint 3: 🕹️ Interact with Smart Contract
 
 Now that we've deployed our NFT smart contract on the Kalp blockchain, it's time to interact with it. We'll perform the following actions:
@@ -423,8 +421,6 @@ Before proceeding, ensure you have the following:
 > 💡 **Note:** Always keep your API Key secure. Do not share it publicly or commit it to version control systems.
 
 If you encounter any issues or need more detailed explanations, refer to the [Kalp Studio Documentation](https://doc.kalp.studio) or seek support from the Kalp community.
-
----
 
 ---
 
