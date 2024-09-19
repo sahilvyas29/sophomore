@@ -46,7 +46,7 @@ Before you begin, ensure you have the following:
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/PrabalParihar/buildthon.git
+   git clone https://github.com/Build-Hackathon/sophomore.git
    ```
 
 2. **Navigate to the project directory:**
